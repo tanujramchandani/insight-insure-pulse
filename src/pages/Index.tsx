@@ -48,9 +48,9 @@ const Index = () => {
                 <BarChart3 className="h-8 w-8" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold">Insurance Data Analytics</h1>
+                <h1 className="text-3xl font-bold">Data Analysis</h1>
                 <p className="text-white/80">
-                  Comprehensive analysis and insights for insurance datasets
+                  Comprehensive analysis and insights for your datasets
                 </p>
               </div>
             </div>
@@ -85,7 +85,7 @@ const Index = () => {
               <Upload className="h-16 w-16 text-analytics-primary mx-auto mb-4" />
               <h2 className="text-2xl font-bold mb-2">Start Your Analysis</h2>
               <p className="text-muted-foreground">
-                Upload your insurance dataset to begin comprehensive data analysis and gain actionable insights
+                Upload your dataset to begin comprehensive data analysis and gain actionable insights
               </p>
             </div>
             <DataUpload onDataLoad={handleDataLoad} />
@@ -208,7 +208,7 @@ const Index = () => {
         <div className="container mx-auto px-4 py-6">
           <div className="text-center text-sm text-muted-foreground">
             <p>
-              Professional insurance data analysis powered by modern web technologies.
+              Professional data analysis powered by modern web technologies.
               Upload your CSV dataset to get started with comprehensive insights.
             </p>
           </div>
