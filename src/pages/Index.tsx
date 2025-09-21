@@ -8,6 +8,7 @@ import { DataPreview } from "@/components/data-preview";
 import { DataStatistics } from "@/components/data-statistics";
 import { DataVisualizations } from "@/components/data-visualizations";
 import { InsightsSummary } from "@/components/insights-summary";
+import { NextStepsPreview } from "@/components/next-steps-preview";
 import { BarChart3, Upload, Database, TrendingUp, Lightbulb, RefreshCw } from "lucide-react";
 
 const Index = () => {
@@ -48,9 +49,9 @@ const Index = () => {
                 <BarChart3 className="h-8 w-8" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold">Data Analysis</h1>
+                <h1 className="text-3xl font-bold">Insight Insure Pulse</h1>
                 <p className="text-white/80">
-                  Comprehensive analysis and insights for your datasets
+                  Advanced insurance analytics with predictive models and risk assessment
                 </p>
               </div>
             </div>
@@ -63,15 +64,26 @@ const Index = () => {
                     {data.length.toLocaleString()} rows × {headers.length} columns
                   </div>
                 </div>
-                <Button
-                  onClick={resetAnalysis}
-                  variant="secondary"
-                  size="sm"
-                  className="flex items-center gap-2"
-                >
-                  <RefreshCw className="h-4 w-4" />
-                  New Analysis
-                </Button>
+                <div className="flex gap-2">
+                  <Button
+                    onClick={() => window.open('/analytics-dashboard', '_blank')}
+                    variant="secondary"
+                    size="sm"
+                    className="flex items-center gap-2"
+                  >
+                    <BarChart3 className="h-4 w-4" />
+                    Advanced Analytics
+                  </Button>
+                  <Button
+                    onClick={resetAnalysis}
+                    variant="outline"
+                    size="sm"
+                    className="flex items-center gap-2"
+                  >
+                    <RefreshCw className="h-4 w-4" />
+                    New Analysis
+                  </Button>
+                </div>
               </div>
             )}
           </div>
@@ -85,7 +97,7 @@ const Index = () => {
               <Upload className="h-16 w-16 text-analytics-primary mx-auto mb-4" />
               <h2 className="text-2xl font-bold mb-2">Start Your Analysis</h2>
               <p className="text-muted-foreground">
-                Upload your dataset to begin comprehensive data analysis and gain actionable insights
+                Upload your insurance dataset to begin comprehensive analysis with predictive modeling and risk assessment
               </p>
             </div>
             <DataUpload onDataLoad={handleDataLoad} />
@@ -93,24 +105,25 @@ const Index = () => {
             <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
               <Card className="shadow-card">
                 <CardContent className="p-4">
-                  <h3 className="font-semibold mb-2">What You'll Get</h3>
+                  <h3 className="font-semibold mb-2">Advanced Analytics</h3>
                   <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>• Data quality assessment</li>
-                    <li>• Statistical summaries</li>
-                    <li>• Interactive visualizations</li>
-                    <li>• Business insights</li>
+                    <li>• Customer lifetime value prediction</li>
+                    <li>• Claims probability scoring</li>
+                    <li>• Churn risk assessment</li>
+                    <li>• Customer segmentation</li>
+                    <li>• Pricing optimization</li>
                   </ul>
                 </CardContent>
               </Card>
               
               <Card className="shadow-card">
                 <CardContent className="p-4">
-                  <h3 className="font-semibold mb-2">Supported Formats</h3>
+                  <h3 className="font-semibold mb-2">Insurance Data Types</h3>
                   <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>• CSV files only</li>
-                    <li>• Maximum 20MB file size</li>
-                    <li>• Headers in first row</li>
-                    <li>• UTF-8 encoding preferred</li>
+                    <li>• Customer demographics & policies</li>
+                    <li>• Claims history & amounts</li>
+                    <li>• Premium data & risk factors</li>
+                    <li>• CSV format, max 20MB</li>
                   </ul>
                 </CardContent>
               </Card>
@@ -199,6 +212,11 @@ const Index = () => {
                 </div>
               </Tabs>
             </div>
+
+            {/* Next Steps Section */}
+            <div className="mt-12">
+              <NextStepsPreview hasData={data.length > 0} />
+            </div>
           </div>
         )}
       </main>
@@ -208,8 +226,8 @@ const Index = () => {
         <div className="container mx-auto px-4 py-6">
           <div className="text-center text-sm text-muted-foreground">
             <p>
-              Professional data analysis powered by modern web technologies.
-              Upload your CSV dataset to get started with comprehensive insights.
+              Professional insurance analytics powered by advanced predictive modeling.
+              Upload your dataset to unlock customer insights, risk assessment, and pricing optimization.
             </p>
           </div>
         </div>
